@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Silkscreen:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+:root{
+    --ff-primary: 'Poppins', sans-serif; 
+    --ff-secondary: 'Silkscreen', cursive; 
+    
+    --color-light: #FFF0CD; 
+    --color-dark: #585C64;
+
+    --color-bg-1: #82B4B3; 
+    --color-bg-2: #AC4F39; 
+    --color-bg-2-1: #BE4321; 
+    --color-bg-3: #E28B17; 
+    --color-bg-4: #F7B521;
+
+
+    --color-border: #213841;
+    --color-screen: #4f6c58;
+    --color-text: #070c0e;
+
+    --color-text-disabled: #754a12; 
+    --color-disabled: #222425;
+}
+
+body{
+    font-family: var(--ff-primary);
+    background: var(--color-bg-1);
+    color: var(--color-light);
+    overflow-x: hidden;
+}
+
+.container{
+    width: 100vw;
+}
+
+
+
+/* ============ ACTIONS ============ */
+
+.disabled{
+    pointer-events: none;
+    background: var(--color-disabled);
+    color: var(--color-text-disabled);
+}
+
+/* ============ HEADER ============ */
+
+.header{
+    width: 100vw;
+    padding: .2rem;
+    background: linear-gradient(var(--color-bg-2), var(--color-bg-2-1));
+    box-shadow: 0px 2px 20px 2px rgba(0, 0, 0, .2);
+}
+
+.header-container{
+    height: 4rem;
+    border-block: 2px dotted var(--color-light);
+    display: flex;
+    justify-content: center;
+}
+
+.logo{
+    width: 180px;
+}
+
+/* ============ MAIN ============ */
+
+.main{
+    height: calc(100vh - 4rem);
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+
+/* ============ split ============ */
+
+.split{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 86%;
+    align-items: center;
+}
+
+.text h1{
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.beeper-container{
+    display: grid;
+    place-items: center;
+}
+
+/* ============ beeper ============ */
+
+.beeper{
+    height: 17rem;
+    width: 25rem;
+    background: linear-gradient(var(--color-bg-4), var(--color-bg-3));
+    border: 2px solid var(--color-border);
+    border-radius: 10px;
+    padding: 2rem 1rem;
+}
+
+.beeper-display{
+    height: 10rem;
+    margin: auto;
+    background: var(--color-screen);
+    border: 2px solid var(--color-border);
+    border-radius: 5px;
+    font-family: var(--ff-secondary);
+    color: var(--color-text);
+    padding: 1rem;
+    font-size: .9rem;
+    margin-bottom: 1.5rem;
+} 
+
+button{
+    cursor: pointer;
+    padding: .5rem 1.3rem;
+    border-radius: 10px; 
+    background: var(--color-text);
+    color: var(--color-bg-3);
+    font-size: .9rem;
+    text-transform: uppercase;
+}
+
+.beeper-control{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prev-btn i{
+    color: var(--color-bg-3);
+}
+
+/* ============ footer ============ */
+
+.footer{
+    height: 2rem;
+    width: 100vw;
+    background: var(--color-bg-1);
+    color: var(--color-light);
+    text-align: center;
+    padding-block: .5rem;
+    font-size: .8rem;
+    border-top: 2px dotted var(--color-light);
+}
+
+/* ============ responsive ============ */
+
+@media (max-width: 790px) {
+    .main{
+        height: 100vh;
+    }
+    
+    .split{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .text h1{
+        font-size: 2rem;
+    }
+
+    .beeper{
+        height: 19rem;
+        width: 20rem;
+    }
+
+    .beeper-display{
+        height: 12rem;
+    }
+}
